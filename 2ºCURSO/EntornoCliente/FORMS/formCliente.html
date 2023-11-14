@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <link rel="stylesheet" th:href="@{/css/syle.css}"/>
+</head>
+    <body>
+        <form action="recibeParametros" method="post" id="f1">
+            <label id="lab_nombre" for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" th:value="${Default}"/>
+            <br>
+            <label id="lab_clave" for="clave">Contraseña</label>
+            <input type="password" name="clave" id="clave"/>
+            <br>
+            <input type="hidden" name="pi" id="pi" value="3.14"/>
+            <label> Genero</label>
+            <input type="radio" th:each="genero: ${genero}" th:text ="${genero.getValue()}" th:value="${genero.getKey()}" name="genero"/>
+            <br>
+            <label>Aficiones</label>
+            <input  type="checkbox" th:each="aficiones : ${aficiones}" th:text="${aficiones.getValue()}" th:value="${aficiones.getKey()}">
+            <br/>
+            <label for="descripcion">Descripción del producto</label>
+            <br>
+            <textarea name="descripcion" id="descripcion"  cols="30" rows="5"></textarea>
+            <br>
+            <label id="tit_pais" class="titulo">Pais</label>&emsp;&emsp;
+            <select name="pais" id="pais" >
+               <!-- <option  th:each="paiskey: ${paises.keySet()}" th:value="${paiskey}" th:text="${paises.get(paiskey)}"></option-->
+                <option  th:each="pais: ${paises}" th:value="${pais.key}"  th:text="${pais.value}" th:selected="${pais.key == paisSeleccionado}" ></option>
+
+            </select>
+            <label id="tit_musica" class="titulo">Musicas</label>&emsp;&emsp;
+            <select name="musicas" id="musicas" multiple="multiple" size="3">
+                <option th:each="musicas: ${musicas}" th:value="${musicas.key}" th:text="${musicas.value}"
+                th:selected="${musicas.key == DefaultMusic}"> </option>
+            </select>
+            <br>
+            <input type="image" name="imagen" id="img" th:src="@{/imagenes/gato.jpeg}"/>
+            <input type="reset" id="btn_reset" value="Resetear"/>
+            <input type="submit" id="btn_submit" value="Enviar"/>
+            <input type="file" id="file" name="file">
+
+            
+            <button onclick="marcarCheckboxes()">Marcar Todos los Checkboxes</button>
+            <button onclick="marcarSelectMultiple()">Marcar Todos los Select Multiple</button>
+            <button onclick="desmarcarTodo()">Desmarcar Todo</button>
+
+
+        </form>
+    </body>
+</html>

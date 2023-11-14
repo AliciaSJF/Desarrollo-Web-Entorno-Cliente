@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercico 5.6</title>
+    </head>
+    <body>
+
+        <h3>Información sobre el producto</h3>
+        <form method="post" enctype="multipart/form-data">
+            <fieldset>
+            <legend>Datos básicos</legend>
+            <table>
+                <tr>
+                    <td> <label>Nombre</label></td>
+                </tr>
+                <tr>
+                    <td><input name="nombre" type="text" placeholder="Escriba su nombre"></td>
+                </tr>
+                <tr>
+                    <td><label>Descripción</label></td>
+                </tr>
+                <tr>
+                    <td></tf><textarea name="Descripción" cols="30" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label>Foto</label></td>
+                </tr>
+                <tr>
+                    <td><input type="file" size="15"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="contador"><label>Añador contador de visitas</label></td>
+                    
+            </table>    
+            </fieldset>
+            <fieldset>
+            <legend>Datos económicos</legend>
+            <table>
+                <tr>
+                    <td><label>Precio</label><input type="text" name="precio" size="5" >€</td>
+                    <td>  &nbsp &nbsp &nbsp  &nbsp  </td>
+                    <td><label>Impuestos</label>
+                        <select name="%">
+                            <option>4%</option>
+                            <option>7%</option>
+                            <option>16%</option>
+                            <option>25%</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Promoción</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" value="Ninguno"><label>Ninguno</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" value="TRansporte gratuito"><label>Transporte gratuito</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" value="Descuento 5%"><label>Descuento 5%</label></td>
+                </tr>
+            </table>
+            </fieldset>
+
+
+        </form>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tienda</title>
+    </head>
+    <body>
+        <form onsubmit="myFunction()">
+            <fieldset>
+                <legend>Formulario de envío</legend>
+                <label for="identificador">Identificador del producto</label><br>
+                <input type="number" name="identificador" id="identificador"><br>
+                <label for="nombre">Nombre del producto</label><input type="text" id="nombre" name="nombre"><br>
+                <textarea name="descript" id="descript" rows="5" cols="40" placeholder="Escriba aquí"></textarea><br>
+                <label for="passwd">Clave para dar de alta el prdoducto</label><input type="password" name="passwd" id="passwd"><br>
+                <label for="fecha">Introduzca la fecha del envío:</label><br>
+                <input type="date" id="fecha" name="fecha"><br>
+                <label for="categ">Seleccione la categoría del producto</label>
+                <select>
+                    <option>Plataformas</option>
+                    <option>Rol</option>
+                    <option>Estrategia</option>
+                    <option>Retro<noscript></noscript></option>
+                </select><br>
+                <p>Seleccione la tieda en la que se ha comprado el producto: </p>
+                <label>Vallecas</label><input type="radio" id="vallekas" name="tienda">
+                <label>Usera</label><input type="radio" id="usera" name="tienda">
+                <label>Carabanchel</label><input type="radio" id="carabanchel" name="tienda">
+                <label>Serrano</label><input type="radio" id="serrano" name="tienda">
+                <br>
+                <br>
+                <label>Seleccione los accesorios del producto:</label><br>
+                <label>Mando</label><input type="checkbox" id="mando" name="mando">
+                <label>Funda</label><input type="checkbox" id="finda" name="funda">
+                <label>Taza</label><input type="checkbox" id="taza" name="taza">
+                <br>
+                <br>
+                <label>Seleccione el color para el producto: </label><br>           
+                <input type="color" id="color" name="color value="#ff0000"><br>
+                <label>Introduzca su email:</label>
+                <input type="email"><br>
+                <label>Introduzca el precio del producto</label> <br>
+                <input type="range" id="rango" name="rango">
+                <input type="submit" value="enviar"> <br>
+                <input type="reset"><br>
+                <input type="button" value="enviar valores"><br>
+            </fieldset>
+
+        </form>
+    </body>
+    <script src="tienda.js"></script>
+</html>

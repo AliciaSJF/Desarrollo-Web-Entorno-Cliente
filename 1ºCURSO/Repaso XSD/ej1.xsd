@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="expresiones">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="a" type="a"></xs:element>
+                <xs:element name="b" type="b"></xs:element>
+                <xs:element name="c" type="c"></xs:element>
+                <xs:element name="d" type="d"></xs:element>
+                <xs:element name="e" type="e"></xs:element>
+                <xs:element name="f" type="f"></xs:element>
+                <xs:element name="g" type="g"></xs:element>
+                <xs:element name="h" type="h"></xs:element>
+                <xs:element name="i" type="i"></xs:element>
+                <xs:element name="j" type="j"></xs:element>
+                <xs:element name="k" type="k"></xs:element>
+                <xs:element name="l" type="l"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="a">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]+"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="b">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{8}[A-Z]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="c">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{8}[^a-zIOU\W\d]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="d">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[+]?[0-9]{9,12}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="e">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,16}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="f">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}[a-z]{3}[0-9]{3}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="g">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-ZÑÜ][a-zñáéíóúü]+[,][ ][A-ZÑÜ][a-zñáéíóúü]+"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="h">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-z]*[aeiou][a-zA-z]*[aeiou][a-zA-z]*"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="i">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-3][0-9]/[0-1][1-9]/[0-9]{4}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="j">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z$_][a-zA-Z\d_$]*"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="k">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9!#$%'-*+/=?]+[a-zA-Z0-9]+@"></xs:pattern>
+            <xs:maxLength value="256"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="l">
+        <xs:restriction base="xs:string">
+            <xs:pattern value=""></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

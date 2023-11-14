@@ -1,0 +1,17 @@
+
+
+body {
+    background-image: url("https://mymodernmet.com/wp/wp-content/uploads/2021/01/studio-ghibli-history-7.jpg");
+  }
+
+.p1 {
+    font-family: "Papyrus", Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+body {
+    -webkit-text-stroke: 1px rgb(247, 241, 241);
+    color: rgb(9, 9, 9); 
+}
+.p2 {
+    font-family: "Papyrus", Verdana, Geneva, Tahoma, sans-serif;
+}

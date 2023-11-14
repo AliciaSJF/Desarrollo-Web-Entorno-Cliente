@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UFT-8"/>
+        <title>Formulario</title>
+    </head>
+    <body>
+        <form id="f1">
+            <label id="lab_nombre" for="nombre">Nombre</label><input type="text" name="nombre" id="nombre" value="Alicia"/> <br>
+            <label id="lab_clave" for="clave">Contraseña</label><input type="password" name="clave" id="clave"/><br>
+            <input type="hidden" name="pi" id="pi" value="3.14"/>
+            <label id="rad_femenino" for="femenino">Femenino</label><input type="radio" name="genero" id="femenino" value="F"/>
+            <label id="rad_masculino" for="masculino">Masculino</label><input type="radio" name="genero" id="masculino" value="M"/>
+            <label id="rad_otro" for="otro">Otro</label><input type="radio" name="genero" id="otro" value="M"/>
+            <span id="tit_aficion" class="titulo">Aficiones</span> &emsp;&emsp;
+            <label id="chk_cine" for="cine" >Cine</label>
+                <input type="checkbox" name="aficiones" id="cine" value="C"/>
+            <label id="chk_deporte" for="deporte" >Deporte</label>
+                <input type="checkbox" name="aficiones" id="deporte" value="D"/>
+            <label id="chk_viajes" for="viajes" >Viajes</label>
+                <input type="checkbox" name="aficiones" id="viajes" value="V"/>
+            <br/>
+            <span id="tit_pais" class="titulo">Pais</span>&emsp;&emsp;
+            <select name="pais" id="">
+                <option   selected="selected" value="E"  >España</option>
+                <option value="G">Grecia</option>
+                <option value="I">Italia</option>
+                <option value="P">Portugal</option>
+            </select>
+            <span id="tit_musica" class="titulo">Musicas</span>&emsp;&emsp;
+            <select name="musicas" id="musicas" multiple="multiple" size="3">
+                <option value="E"  >Electronica</option>
+                <option value="F">Funky</option>
+                <option value="P">Pop</option>
+                <option value="R">Rock</option>
+                <option value="T">Trap</option>
+            </select>
+            <br>
+            <input type="button" value="Marcar todos los checkboxes" id="BmarcarCheckboxes"/>
+            <input type="button" value="Marcar todos los select multiple" id="BmarcarSelectMultiple"/>
+            <input type="button" value="Desmarcar todo" id="BdesmarcarTodo"/>
+            <input type="reset" id="btn_reset" value="Resetear"/>
+            <input type="submit" id="btn_submit" value="Enviar"/>
+
+            <script src="formCliente.js"></script>
+            
+        </form>
+    </body>
+</html>

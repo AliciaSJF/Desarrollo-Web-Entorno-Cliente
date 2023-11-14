@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Programa de búsqueda y reemplazo</title>
+</head>
+<body>
+    <textarea id="texto" rows="4" cols="50"></textarea>
+    <br>
+    Palabra a buscar: <input type="text" id="buscar">
+    <br>
+    Palabra a reemplazar: <input type="text" id="reemplazar">
+    <br>
+    <button onclick="buscarYReemplazar()">Buscar y reemplazar</button>
+    <br>
+    <hr>
+    <p id="resultado"></p>
+
+    <script>
+        function buscarYReemplazar() {
+            const texto = document.getElementById("texto").value;
+            const palabraBuscar = document.getElementById("buscar").value;
+            const palabraReemplazar = document.getElementById("reemplazar").value;
+
+            let resultado = "";
+
+            if (texto.includes(palabraBuscar)) {
+                resultado += "Primera ocurrencia reemplazada: ";
+                resultado += texto.replace(palabraBuscar, palabraReemplazar);
+                resultado += "<br>";
+
+                resultado += "Todas las ocurrencias reemplazadas: ";
+                resultado += texto.replaceAll(palabraBuscar, palabraReemplazar);
+                resultado += "<br>";
+
+                resultado += "Conteo de ocurrencias reemplazadas: ";
+                const regex = new RegExp(palabraBuscar, "g");
+                const conteo = (texto.match(regex) || []).length;
+                resultado += conteo;
+                resultado += "<br>";
+
+                resultado += "Preguntar en cada ocurrencia: ";
+                const textoReemplazado = texto.replace(regex, function(match) {
+                    const confirmacion = confirm(`¿Deseas reemplazar esta ocurrencia: ${match}?`);
+                    if (confirmacion) {
+                        return palabraReemplazar;
+                    } else {
+                        return match;
+                    }
+                });
+                resultado += textoReemplazado;
+            } else {
+                resultado = "No se encontraron ocurrencias de la palabra a buscar.";
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>

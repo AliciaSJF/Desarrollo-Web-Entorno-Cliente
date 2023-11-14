@@ -1,0 +1,72 @@
+package academia;
+/* atributos: nombre, DNI, curso, grupo y asignaturas en las que se ha matriculado (nombre), así
+como la nota que ha obtenido en cada una de ellas.  */
+
+public class Alumno {
+     private String nombre;
+     private String DNI;
+     private int curso;
+     private String grupo;
+     String [] asignaturas;
+     float [] notas;
+       
+     public Alumno(String nombre) 
+     {   this.nombre = nombre;
+    	 asignaturas = new String[3];
+    	 notas = new float [3];
+    	 
+    	 
+    		 
+    	 
+     }
+     
+     public Alumno(String nombre, String DNI, int curso, String grupo )
+     {
+    	 this.nombre= nombre;   this.DNI = DNI; this.curso = curso;this.grupo= grupo;
+    	 asignaturas = new String[3];
+    	 notas = new float [3];
+    	 for (int i=0;i<3; i++)
+              notas[i]= -1;		 
+     }
+     
+     public void setnombre(String nombre) 
+     {
+    	 this.nombre= nombre;
+     }
+     
+     
+     public String getnombre() 
+     {
+    	 return this.nombre;
+     }
+    public void SetAsignatura(String asig, int n)
+    {
+    	asignaturas[n]= asig;
+    }
+    
+    
+     public void ponerNota (String asig, float nota) 
+     {
+    	 for (int i=0; i<3; i++)
+    	 { if (asignaturas[i].equalsIgnoreCase(asig));
+    	       notas[i]= nota;
+    	 }
+     }	
+    	 
+    
+    
+    	public String toString() {
+    		String cadena =  " Nombre: "+ nombre + " DNI: "+DNI + " Curso: "+ curso + " Curso: "+ curso+
+    				" Grupo: "+grupo + " Asignaturas: ";
+    		
+    		for(int i=0;i< 3 ;i++)
+    		      { if (notas[i]==-1)
+    		    	  cadena += asignaturas[i] + ": N.E.";
+    		        else
+    				  cadena += "  " + asignaturas[i] + notas[i] + " " ;			
+    				}
+    		
+    		return cadena;
+    	}
+ }
+ 

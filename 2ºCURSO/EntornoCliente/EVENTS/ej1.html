@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <label for="Checkboxes">Checked</label>
+    <input type="radio" name="radios" id="Checkboxes" />  &nbsp  &nbsp
+    <label for="Desplegable">Select</label>
+    <input type="radio" name="radios" id="Desplegable" /> &nbsp &nbsp
+    <label for="lista">List</label>
+    <input type="radio" name="radios" id="Lista" />
+
+    <div id="op1Container" >
+        <label>Opción 1</label>
+        <input type="checkbox" name="op1" id="check1" value="Opción 1"/>
+        <label>Opción 2</label>
+        <input type="checkbox" name="op1" id="check2" value="Opción 2"/>
+        <label>Opción 3</label>
+        <input type="checkbox" name="op1" id="check3" value="Opción 3"/>
+    </div>
+    <div id="op2Container"">
+        <select id="op2">
+            <option  id="select1" value="Opción 1">Opción 1</option>
+            <option  id="select4" value="Opción 2">Opción 2</option>
+            <option  id="select3" value="Opción 3">Opción 3</option>
+            <option  selected="selected" id="select4" value="Nada seleccionado">Nada seleccionado</option>
+        </select>
+    </div>
+       
+    <div id="op3Container" >
+        <ul>
+            <li>Opción 1 <input type="button" id="lista1"  value="seleccionar" onclick="showop3('Opción1')"/></li>
+            <br>
+            <li>Opción 2 <input type="button" id="lista2"  value="seleccionar" onclick="showop3('Opción2')" /></li>
+            <br>
+            <li>Opción 3 <input type="button" id="lista3"  value="seleccionar" onclick="showop3('Opción3')" /></li>
+        </ul>
+    </div>
+    <div id="texto"></div>
+
+
+    <script src="ej1.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Envío</title>
+</head>
+<body>
+    <h2>Formulario de Envío</h2>
+
+    <form id="envioForm" onsubmit="enviarFormulario()">
+        <label for="productoId">Identificador de Producto:</label><br>
+        <input type="number" id="productoId" name="productoId" min="1000" max="2000" required><br><br>
+
+        <label for="nombre">Nombre del Producto:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="descripcion">Descripción del Producto:</label><br>
+        <textarea id="descripcion" name="descripcion" required></textarea><br><br>
+
+        <label for="clave">Clave:</label><br>
+        <input type="password" id="clave" name="clave" required><br><br>
+
+        <label for="fechaEnvio">Fecha de Envío:</label><br>
+        <input type="date" id="fechaEnvio" name="fechaEnvio" required><br><br>
+
+        <label for="categoria">Categoría:</label><br>
+        <select id="categoria" name="categoria" required>
+            <option value="categoria1">Aventuras 1</option>
+            <option value="categoria2">Cooperativo 2</option>
+            <option value="categoria3">Rol 3</option>
+            <option value="categoria4">Pelwas 4</option>
+        </select><br><br>
+
+        <label for="tienda">Tienda:</label><br>
+        <input type="radio" id="tienda1" name="tienda" value="Vallekas" required>
+        <label for="Vallekas">Vallekas</label>
+        <input type="radio" id="tienda2" name="tienda" value="Albacete" required>
+        <label for="Albacete">Albacete</label>
+        <input type="radio" id="tienda3" name="tienda" value="Murcia" required>
+        <label for="Murcia">Murcia</label><br><br>
+
+        <input type="hidden" id="direccion" name="direccion" value="Avda de las suertes 98">
+        <input type="hidden" id="codigoPostal" name="codigoPostal" value="28051"><br><br>
+
+        <label>Accesorios adicionales:</label><br>
+        <input type="checkbox" id="accesorio1" name="accesorios" value="accesorio1">
+        <label for="accesorio1">Accesorio 1</label><br>
+        <input type="checkbox" id="accesorio2" name="accesorios" value="accesorio2">
+        <label for="accesorio2">Accesorio 2</label><br>
+        <input type="checkbox" id="accesorio3" name="accesorios" value="accesorio3">
+        <label for="accesorio3">Accesorio 3</label><br><br>
+
+        <label for="color">Color:</label><br>
+        <input type="color" id="color" name="color" required><br><br>
+
+        <label for="correo">Correo Electrónico:</label><br>
+        <input type="email" id="correo" name="correo" required><br><br>
+
+        <label for="precio">Precio:</label><br>
+        <input type="range" id="precio" name="precio" min="10" max="100" value="10" step="1" required><br><br>
+
+        <label for="telefono">Teléfono de Contacto:</label><br>
+        <input type="tel" id="telefono" name="telefono" required><br><br>
+
+        <label for="fechaDevolucion">Fecha Máxima de Devolución:</label><br>
+        <input type="week" id="fechaDevolucion" name="fechaDevolucion" required><br><br>
+
+        <input type="reset" value="Resetear Campos">
+        <input type="submit" value="Enviar Formulario">
+    </form>
+
+    <div id="resultado"></div>
+
+    <script src="tienda.js"></script>
+</body>
+</html>

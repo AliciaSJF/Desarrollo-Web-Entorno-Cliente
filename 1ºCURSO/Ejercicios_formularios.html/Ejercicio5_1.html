@@ -1,0 +1,38 @@
+Formulario simple:
+<html lang="es">
+<head>
+<title>Práctica de formularios</title>
+</head>
+<body>
+<form action="procesa.php" method="post">
+Escriba su usuario:
+<input type="text" name="usuario" size="10" maxlength="12">
+<input type="submit" value="Enviar datos"> &nbsp;&nbsp;
+<input type="reset" value="Borrar datos">
+</form>
+</body>
+</html>
+-Añadir un campo de tipo contraseña:
+Escriba su contraseña:
+<input type="password" name="clave" size="10" maxlength="12">
+-Texto Multilínea:
+Introduzca sus sugerencias o comentarios:
+<textarea name="Comentarios" rows="6" cols="40">
+</textarea>
+-Menús:
+¿Cómo contactó con nosotros?
+<select name="Contacto">
+<option value=”casualidad”>Por casualidad </option>
+<option value=”periodico”>Por el periódico </option>
+<option value=”buscadores”>En los buscadores </option>
+<option value=”comentario”>Me lo comentaron </option>
+</select >
+-Checkbox
+<input type="checkbox" name="Lista">
+Sí, deseo recibir información acerca de sus productos.
+-Radio Button
+¿Cuál es su sistema operativo preferido?
+<br/>
+<input type="radio" name="SistemaOperativo" value="NT" checked>Windows
+<input type ="radio" name="SistemaOperativo" value="Mac">Mac OS
+<input type ="radio" name="SistemaOperativo" value="Unix">Unix

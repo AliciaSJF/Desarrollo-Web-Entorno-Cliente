@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Practica de formularios con tablas</title>
+</head>
+<body>
+<form action="procesa.php" method="post" enctype="multipart/form-data">
+	<fieldset>
+	<legend><strong>Datos del formulario</strong></legend>
+		<fieldset>
+			<legend>Información de usuario</legend>
+			<table>
+				<tr>
+					<td><label>Usuario</label></td>
+					<td><input type="text" name="usuario"></td>
+				</tr>
+				<tr>
+					<td><label>Clave</label></td>
+					<td><input type="password" name="clave"></td>
+				</tr>
+			</table>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Datos personales</legend>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td>Menos de 20 años</td>
+								<td><input type="radio" name="edad" value="0a19" /></td>
+							</tr>
+							<tr>
+								<td>De 20 a 34 años</td>
+								<td><input type="radio" name="edad" value="20a34" checked></td>
+							</tr>
+							<tr>
+								<td>De 35 a 65 años</td>
+								<td><input type="radio" name="edad" value="35a65"></td>
+							</tr>
+							<tr>
+								<td>Más de 65 años</td>
+								<td><input type="radio" name="edad" value="mas65"></td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td>Posee vivienda propia</td>
+								<td><input type="checkbox" name="vivienda" /></td>
+							</tr>
+							<tr>
+								<td>Trabaja</td>
+								<td><input type="checkbox" name="trabaja" /></td>
+							</tr>
+							<tr>
+								<td>Sabe jugar al mus</td>
+								<td><input type="checkbox" name="mus" checked /></td>
+							</tr>
+						</table>
+					</td>
+					<td><textarea name="comentarios" rows="3" cols="50">Ponga aquí sus comentarios</textarea></td>
+				</tr>
+			</table>  <!-- fin de la tabla de los datos personales -->
+			
+			<table>
+				<tr>
+					<td><label>País</label></td>
+					<td>
+						<select name="pais">
+							<optgroup label="Europa">
+								<option value="es">España</option>
+								<option value="fr">Francia</option>
+								<option value="dt">Alemania</option>
+								<option value="pt">Portugal</option>
+								<option value="it">Italia</option>
+								<option value="nd">Holanda</option>
+							</optgroup>
+							<optgroup label="Asia">
+								<option value="jp">Japón</option>
+								<option value="ch">China</option>
+								<option value="in">India</option>
+							</optgroup>
+						</select>
+					</td>
+					<td><label>Color Favorito</label></td>
+					<td>
+						<select name="color">
+							<option value="azul">Azul</option>
+							<option value="rojo">Rojo</option>
+							<option value="amarillo" selected>Amarillo</option>
+							<option value="verde">Verde</option>
+						</select>
+					</td>
+					<td><label for="foto">Aquí puede subir una foto</label></td>
+					<td><input type="file" name="foto" id="foto"></td>
+				</tr>
+			</table>
+		</fieldset>
+		
+		<input type="submit" value="Enviar">
+		<input type="reset" value="Resetear">
+		<input type="button" value="Nada">
+	</fieldset>		
+</form>
+</body>
+</html>

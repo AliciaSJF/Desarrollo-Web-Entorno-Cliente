@@ -1,0 +1,323 @@
+/* Se quiere implementar un simulador de vehículos. Existen dos clases de Vehiculos: Coche
+y Camion.
+a. De todos los Vehiculos queremos almacenar la matrícula y la velocidad. En el
+momento de crearlos, la matricula se recibe como parámetro y la velocidad se pone a 0.
+En su correspondiente método toString() se devolverá la matrícula y la velocidad.
+
+b. Los coches tienen además un atributo para el número de puertas que se recibe también
+como parámetro a la hora de crearlo. Y contiene un método que devuelve el número de
+puertas.
+c. Los camiones tienen un atributo del tipo de Remolque. Definimos en la clase dos
+métodos, ponRemolque que recibe un Remolque por parámetro y otro quitaRemolque
+que pone el atributo a null. Cuando se muestre la información que lleve remolque,
+además de matrícula y velocidad debe aparecer información del remolque.
+d. Crearemos la clase PruebaVehiculo con un método main donde se tenga un menú con
+las siguientes operaciones (utiliza un ArrayList para guardar los vehículos que se creen
+desde el menú):
+1.- Añadir coche
+2.- Añadir camión
+4.- Muestre la información de todos los vehículos por pantalla.
+5.- Salir
+*/
+
+package vehiculos;
+
+public class Vehiculo {
+   private String matricula;
+   private int velocidad;
+   
+   public Vehiculo ( String matri ) {
+	   matricula= matri;
+	   velocidad =0;
+   }
+
+public String getMatricula() {
+	return matricula;
+}
+
+public void setMatricula(String matricula) {
+	this.matricula = matricula;
+}
+
+public int getVelocidad() {
+	return velocidad;
+}
+
+public void acelerar ( int km_h) {
+	velocidad += km_h;
+}
+
+public void setVelocidad(int velocidad) {
+	this.velocidad = velocidad;
+}
+  
+ public String toString () {
+	 return "Matricula: "  +  matricula + " Velocidad: " + velocidad;
+ }
+   
+}
+
+//**********************************************************************
+
+/*
+Los camiones tienen un atributo del tipo de Remolque que se inicializa a null en el
+momento de crear el camión para indicar que aún no tiene remolque. Definimos en la
+clase dos métodos, ponRemolque que recibe un Remolque por parámetro y otro
+quitaRemolque que pone el atributo a null. Cuando se muestre la información que lleve
+remolque, además de matrícula y velocidad debe aparecer información del remolque
+*/
+
+package vehiculos;
+
+public class Camion extends Vehiculo {
+    private Remolque remolque;
+    
+    public Camion (String matricula) {
+          super(matricula);
+    
+    }
+    
+    public void ponRemolque (Remolque r ) {
+    	this.remolque  = r;
+    }
+    
+    public void quitaRemolque () {
+    	this.remolque=null;
+     }
+    
+    public int getPeso()
+    {
+    	return remolque.getPeso();
+    }
+    
+    public String toString () {
+    	return super.toString() + "   "  +  remolque;
+    }
+   
+
+    
+    
+
+
+}
+
+//******************************************************
+
+/*
+b. Los coches tienen además un atributo para el número de puertas que se recibe también
+como parámetro a la hora de crearlo. Y contiene un método que devuelve el número de
+puertas.
+*/
+package vehiculos;
+
+public class Coche  extends Vehiculo {
+
+	private int num_puertas;
+	
+	public Coche (String matri, int puertas) 
+	{  super(matri);
+	   num_puertas = puertas;	
+	}
+	
+  public String toString(){
+	  return super.toString() + " Numero de puertas: " + num_puertas;
+  }
+	
+}
+
+
+//***********************************************
+
+/*g.Crearemos la clase PruebaVehiculo con un mÃ©todo main donde se tenga un menÃº con las siguientes operaciones 
+ * (utiliza un ArrayList para guardar los vehÃ­culos que se creen desde el menÃº):
+1.- AÃ±adir coche
+2.- AÃ±adir camiÃ³n
+3.- AÃ±adir un remolque (de peso en kg el que indique el usuario) a todos los camiones
+4.- Muestre la informaciÃ³n de todos los vehÃ­culos por pantalla.
+5.- Borre todos los camiones
+6.- Acelerar vehiculo
+7.- Salir
+
+ArrayList<nombreClase> nombreDeLista = new ArrayList<nombreClase> ();
+*/
+
+
+package vehiculos;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PruebaVehiculo 
+{
+
+	public static void main(String[] args) 
+	{
+		ArrayList <Vehiculo> MisVehiculos ;
+		MisVehiculos = new ArrayList<Vehiculo>();
+		
+		  Scanner sc = new Scanner(System.in);	
+		   int op ;		  
+		 			   
+		   do 
+			{
+			 System.out.println ("*********************************************");
+			  System.out.println ("Elija una opción ");
+			  System.out.println ("1. Añadir coche " );
+			  System.out.println ("2. Añadir camión " );
+			  System.out.println ("3. Mostrar todos los vehiculos");
+		      System.out.println ("4. Borrar todos los camiones de mas de 1000Kg");
+		      System.out.println ("5. Añadir remolque");
+		      System.out.println ("6. Acelerar vehiculo");
+			  System.out.println ("7. Salir ");
+			  System.out.println ("*********************************************");
+			     do 
+				  { 
+					  System.out.println ("Elija una opción (1,2,3,4,5,6)");
+				  	  op = sc.nextInt();
+				  } while (op < 1 || op > 7); 
+	      
+	       switch (op) 
+	       {
+	       case 1:  poner_coche( sc, MisVehiculos);   //"1. AÃ±adir coche "
+	    	       break;
+	            	
+	       case 2:  poner_camion ( sc, MisVehiculos); //   "2. AÃ±adir camiÃ³n "
+	    	       break;
+	       	
+	       case 3:   mostar_todos_los_vehiculos ( sc, MisVehiculos);  // "3. Mostrar todos los vehiculos"
+	    	       break;
+	    
+	       case 4: borrar_todos_los_camiones ( sc, MisVehiculos);  //"4. Borrar todos los camiones"
+	    	  	   break;
+ 	        	   
+	       case 5: poner_remolque ( sc, MisVehiculos );// poner remolque
+	    	       break;
+    	   case 6: acelerar_vehiculo(sc, MisVehiculos); // acelerar vehiculo
+    	           break;
+ 	       case 7: System.out.println (" Salir del programa " );  // SALIR
+	    	     break;
+	       }
+	       sc.nextLine();
+	    } while (op != 7); 	
+    }
+	
+
+
+  public  static void poner_coche( Scanner sc, ArrayList <Vehiculo> MisVehiculos  )
+    {   String matri;
+        int num_puertas;
+    	sc.nextLine();              
+        System.out.println ("Dame la matrícula del coche: " );
+        matri = sc.nextLine();
+        System.out.println ("Dame el número de puertas " );
+        num_puertas = sc.nextInt();
+        MisVehiculos.add( new Coche(matri.toUpperCase(), num_puertas));
+    }
+   
+    public static void poner_camion (Scanner sc, ArrayList <Vehiculo> MisVehiculos )   //   "2. AÃ±adir camiÃ³n "
+    {   String matri;
+    	sc.nextLine();         
+        System.out.println ("Dame la matrícula del camion: " );
+       matri = sc.nextLine();
+       MisVehiculos.add( new Camion(matri.toUpperCase()));
+    }
+    
+  public static void mostar_todos_los_vehiculos (Scanner sc,ArrayList <Vehiculo> MisVehiculos) 
+  // "3. Mostrar todos los vehiculos"
+    {
+    	for (int i=0; i < MisVehiculos.size(); i++  ) 
+	          System.out.println(MisVehiculos.get(i).toString());
+    }
+    
+   private static void borrar_todos_los_camiones ( Scanner sc, ArrayList <Vehiculo> MisVehiculos ) 
+   //"4. Borrar todos los camiones"
+    {   Camion c;
+    	
+    	for (int i=0; i < MisVehiculos.size(); i++  )  
+             if ( MisVehiculos.get(i) instanceof Camion  ) 
+             {	 c = (Camion) MisVehiculos.get(i);
+            	 if (c.getPeso() > 1000)
+            	 {	System.out.println ("Se va a borrar eel camión: " + c.getMatricula() );
+                    System.out.println ("Pulse una tecla para continuar "); 
+                    sc.next();
+                    MisVehiculos.remove(i) ;
+                 }
+             }   
+    }
+    
+  private static void acelerar_vehiculo(Scanner sc, ArrayList <Vehiculo> MisVehiculos ) 
+    {    String mat;
+    	int km,i=0; 
+    	boolean encontrado;
+	      sc.nextLine();
+         System.out.println ("Dame la matrícula del vehículo a acelerar:");
+	       mat = sc.nextLine();
+	       mat = mat.toUpperCase();
+	       System.out.println ("Dame los km a acelerar: "); 
+         km = sc.nextInt();
+	       encontrado=false;
+	       do {
+	    	   if (MisVehiculos.get(i).getMatricula().equals(mat))
+	    	   {  MisVehiculos.get(i).acelerar(km);
+	              encontrado = true;    
+	    	   }
+	    	   i++;
+	      } while (i < MisVehiculos.size()  && !encontrado);
+	       if (!encontrado)
+	    	   System.out.println ("Vehículo no encontrado"); 
+	       
+		
+	}
+	
+ public static void   poner_remolque ( Scanner sc, ArrayList <Vehiculo> MisVehiculos ) 
+ { int peso;                
+   String mat;
+   int i=0;
+   boolean encontrado= false;
+   sc.nextLine();
+   System.out.println ("Dame la matrícula del camion: ");
+   mat = sc.nextLine();
+   mat = mat.toUpperCase();
+   System.out.println ("Dame el peso del remolque añadir: "); 
+   peso = sc.nextInt();
+   Remolque r = new Remolque(peso);
+   do 
+    {
+	   if (MisVehiculos.get(i).getMatricula().equals(mat) &&  MisVehiculos.get(i) instanceof Camion )
+	   {  Camion c = (Camion) MisVehiculos.get(i);
+	      c.ponRemolque(r);
+        encontrado = true;    
+	   }
+	   i++;
+     } while (i < MisVehiculos.size()  && !encontrado);
+   if (!encontrado)
+	   System.out.println ("Camion no encontrado"); 
+	 
+ }
+
+}
+	
+//****************************************************
+
+
+/*Hay que implementar la clase Remolque que tiene un atributo de tipo entero que es el
+peso del remolque y su valor se le asigna a la hora de crear el Remolque. Tendrá su
+método toString() como todas las demás clases
+*/
+
+package vehiculos;
+
+public class Remolque {
+   private int pesoRemolque;
+   
+   public Remolque (int peso) {
+	   pesoRemolque = peso;
+   }
+   
+   public int getPeso() {
+	   return pesoRemolque;
+   }
+   public String toString () {
+	   return   " peso remolque: "  + pesoRemolque;
+	   
+   }
+}

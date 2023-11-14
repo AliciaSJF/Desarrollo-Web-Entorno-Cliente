@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 4</title>
+    </head>
+    <body>
+
+        <h1> Productos Mexicanos de Limpieza "PROLIM"</h1>
+        <form action="server.php" method="post">
+          <p><label>Entrada(elija sólo una línea de productos):</label></p> 
+          <select name="productos">
+            <option value="Ninguna">Ninguna</option>
+            <option value="Cocina">Cocina</option>
+            <option value="Lavandería">Lavandería</option>
+            <option value="Hábitat">Hábitat</option>
+            <option value="Albercas">Albercas</option>
+            <option value="Indusrtial">Industrial</option>
+          </select>
+          <p><label>Segundo(puede haber más de un producto)</label></p>
+          <select name="productos2" size="4"  multiple>
+            <option value="Ninguno">Ninguno</option>
+            <option value="Tegen(Detergente lavaloza neutro uso manual">Tegen(Detergente lavaloza neutro uso manual</option>
+            <option value="Spotless (Detergente líquido para máquina lavaloza)">Spotless (Detergente líquido para máquina lavaloza)</option>
+            <option value="Track (Pasta Multiusos)">Track (Pasta Multiusos)</option>
+            <option value="Triton (Prelavador alcalino líquido)">Triton (Prelavador alcalino líquido)</option>
+            <option value="DINAMO (Desengrasante Emulsificante )">DINAMO (Desengrasante Emulsificante )</option>
+            <option value="Triton (Prelavador alcalino líquido)">Triton (Prelavador alcalino líquido)</option>
+            <option value="Crystal (Limpia vidrios)">Crystal (Limpia vidrios)</option>
+          </select>
+          <p><label>Cocina(elija sólo un producto):</label></p>
+          <select name="productos cocina">
+            <option value="Ninguno">Ninguno</option>
+            <option value="Tergen (Detergente lavaloza neutro uso manual)">Tergen (Detergente lavaloza neutro uso manual)</option>
+            <option value="Spotless (Detergente líquido para maquina lavaloza)">Spotless (Detergente líquido para maquina lavaloza)</option>
+            <option value="Track (Pasta Multiusos)">Track (Pasta Multiusos)</option>
+            <option value="Triton (Prelavador alcalino líquido)">Triton (Prelavador alcalino líquido)</option>
+          </select>
+
+          <br>
+          <br>
+
+          <input type="submit" value="enviar datos">
+          <input type="reset" value="borrar datos">
+
+        </form>
+    </body>
+</html>
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UFT-8"/>
+        <title>FORM</title>
+        
+    </head>
+    <body>
+        <h1>Formulario</h1>
+        <form  method="get">
+           <fieldset>
+            
+            <table>
+                <tr>
+                    <td><label>Nombre de Usuario: </label></td>
+                   <td> <input name="Nomnbre" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Contraseña</label></td>
+                    <td><input name="contraseña" type="password"></td>
+                </tr>
+                <tr>
+                    <td><label>Secreto</label></td>
+                    <td><input name="secreto" type="hidden"></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <label> ¿Estudias en el Clara del Rey? </label>
+                    </td>
+                    <td>
+                        <input type="radio" name="respuesta" value="Sí">
+                        <label for="si">Sí</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="respuesta" value="No">
+                        <label for="no">No</label>
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        <label>¿Cuántos hermanos tiene?</label>    
+                    </td>
+                    <td>
+                        <input type="checkbox" name="hermanos" value="Ninguno">
+                        <label for="Ninguno">Ninguno</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="hermanos" value="1">
+                        <label for="Ninguno">1</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="hermanos" value="2">
+                        <label for="Ninguno">2</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="hermanos" value="Más">
+                        <label for="Ninguno">Más</label>
+                    </td>     
+                </tr> 
+                <tr>
+                    <tr>
+                        <td><label>Escriba su opinion:</label></td>
+                    </tr>
+                    <tr>
+                        <td><textarea name="opinion" id="" cols="30" rows="10" placeholder="Escriba aquí"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="file">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>País</label></td>
+                        <td>
+                            <select name="pais" >
+                                <optgroup label="Europa">
+                                    <option value="es">España</option>
+                                    <option value="fr">Francia</option>
+                                    <option value="dt">Alemania</option>
+                                    <option value="pt">Portugal</option>
+                                    <option value="it">Italia</option>
+                                    <option value="nd">Holanda</option>
+                                </optgroup>
+                                <optgroup label="Asia">
+                                    <option value="jp">Japón</option>
+                                    <option value="ch">China</option>
+                                    <option value="in">India</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                        <td><label>Color Favorito</label></td>
+                        <td>
+                            <select name="color" multiple>
+                                <option value="azul">Azul</option>
+                                <option value="rojo">Rojo</option>
+                                <option value="amarillo">Amarillo</option>
+                                <option value="verde">Verde</option>
+                            </select>
+                        </td>
+                        <td><label for="foto">Aquí puede subir una foto</label></td>
+                        <td><input type="file" multiple="multiple" name="foto" id="foto"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="image" alt="Enviar formulario" src="/Imagenes/boton.jfif">
+                        </td>
+                    </tr>
+                    <td>
+                        <input type="button" name="boton" value="boton">
+                    </td>
+                    <td>
+                        <input type="submit" value="Enviar"> 
+                    </td>
+                    <td>
+                        <input type="reset" value="Volver a empezar">
+                    </td>
+                </tr>
+
+               
+
+            </table>
+
+           </fieldset>
+        </form>
+        
+    </body>
+</html>

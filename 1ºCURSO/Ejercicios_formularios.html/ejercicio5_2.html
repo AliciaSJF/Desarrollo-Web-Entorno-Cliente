@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 5.2</title>
+        
+    </head>
+    <body>
+        <form action="procesa.php" method="post">
+            <h3>Cuestionario de Personal</h3>
+           <p> <label>Nombre</label></p>
+            <input type="text" name="usuario" size="27"  placeholder="Escribe aquí tu nombre y apellidos">
+            <p><Label>Turno</Label></p>
+    
+            <input type="radio" value="Diurno">
+            <label for = "Diurno">Diurno</label><br>
+            <input type="radio" value="Vespertino">
+            <label for = "Vespertino">Vespertino</label><br>
+           <p><input type="submit" value="Guardar"> </p>
+
+       
+       
+        <p> <label>Número de miembros de la familia</label></p>
+        <input type="number" name="nºmiembros" size="17"  minval="0">
+
+        <p> <label>Idiomas que conoce</label></p>
+        <input type="checkbox" name="Inglés">
+        <label>Inglés</label><br>
+        <input type="checkbox" name="Francés">
+        <label>Francés</label><br>
+      
+        <p>Otros:</p>
+        <textarea name="otros" cols="30" rows="5"></textarea> <br>
+        <input type="submit" value="Enviar"> 
+        <input type="reset" value="Volver a empezar">
+        </form>
+        
+    </body>
+</html>

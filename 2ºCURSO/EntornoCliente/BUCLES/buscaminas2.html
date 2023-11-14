@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buscaminas</title>
+    <style>
+        .cell {
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+            display: inline-block;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="rows">Filas:</label>
+        <input type="number" id="rows" min="1" value="10">
+    </div>
+    <div>
+        <label for="cols">Columnas:</label>
+        <input type="number" id="cols" min="1" value="10">
+    </div>
+    <div>
+        <label for="mines">Minas:</label>
+        <input type="number" id="mines" min="1" value="15">
+    </div>
+    <button id="start-btn">Iniciar</button>
+    <div id="board"></div>
+
+    <script>
+        let rowsInput = document.getElementById("rows");
+        let colsInput = document.getElementById("cols");
+        let minesInput = document.getElementById("mines");
+        let startBtn = document.getElementById("start-btn");
+        let boardElement = document.getElementById("board");
+
+        let rows, cols, totalMines;
+        let board = [];
+
+        startBtn.addEventListener("click", function() {
+            rows = parseInt(rowsInput.value);
+            cols = parseInt(colsInput.value);
+            totalMines = parseInt(minesInput.value);
+
+            generateBoard();
+            updateBoard();
+        });
+
+        // Función para generar el tablero
+        function generateBoard() {
+            board = [];
+
+            for (let i = 0; i < rows; i++) {
+                board[i] = [];
+                for (let j = 0; j < cols; j++) {
+                    board[i][j] = 0; // 0 representa una casilla vacía
+                }
+            }
+
+            // Distribuir las minas aleatoriamente
+            let minesPlaced = 0;
+            while (minesPlaced < totalMines) {
+                const x = Math.floor(Math.random() * rows);
+                const y = Math.floor(Math.random() * cols);
+
+                if (board[x][y] !== -1) {
+                    board[x][y] = -1; // -1 representa una mina
+                    minesPlaced++;
+                }
+            }
+        }
+
+        // Función para actualizar el tablero en la interfaz
+        function updateBoard() {
+            boardElement.innerHTML = "";
+
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < cols; j++) {
+                    const cell = document.createElement("div");
+                    cell.classList.add("cell");
+
+                    if (board[i][j] === -1) {
+                        // Mostrar una mina
+                        cell.innerHTML = "💣";
+                    } else {
+                        // Mostrar la cantidad de minas cercanas
+                        cell.innerHTML = countMines(i, j);
+                    }
+
+                    cell.addEventListener("click", function() {
+                        // Aquí puedes agregar la lógica para revelar una casilla al hacer clic
+                    });
+
+                    boardElement.appendChild(cell);
+                }
+
+                boardElement.appendChild(document.createElement("br"));
+            }
+        }
+
+        // Función para contar las minas cercanas a una casilla
+        function countMines(row, col) {
+            let count = 0;
+
+            for (let i = -1; i <= 1; i++) {
+                for (let j = -1; j <= 1; j++) {
+                    if (row + i >= 0 && row + i < rows && col + j >= 0 && col + j < cols && board[row + i][col + j] === -1) {
+                        count++;
+                    }
+                }
+            }
+
+            return count;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+body{
+  background-color: pink;
+  border:thick dashed green;
+  height: 500px;
+  margin:100px;
+  padding: 30px;
+  
+}
+p{
+  background-color: blue;
+  padding:20px;
+  border:solid thick greenyellow;
+  margin: 20px;
+  
+  bottom:20px;
+}
+h1{
+  padding:20px;
+  margin:20px;
+}
